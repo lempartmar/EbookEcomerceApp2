@@ -1,0 +1,68 @@
+﻿@model PraktyczneKursy.ViewModels.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="login-logo" style="margin-left: auto; margin-right: auto; margin-top: 5rem;">Login</div>
+
+<div class="login-f" style="margin-left: auto; margin-right: auto;">
+
+    @using (@Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div id="login-error">
+            @Html.ValidationMessage("loginerror", "")
+        </div>
+
+        <table class="login-form-table" style="margin-left: auto; margin-right: auto;">
+           
+            <tr>
+                <td>@Html.LabelFor(o => o.Email, "E-mail:")</td>
+                <td class="td-form">
+                    @Html.TextBoxFor(o => o.Email)  
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.Email)
+                    </div>
+                </td class="login-box">
+            
+            </tr>
+
+            <tr style="height: 20px;"> </tr>
+
+
+            <tr class="login-table-box">
+                <td>@Html.LabelFor(o => o.Password, "Hasło")</td>
+                <td  class="td-form">
+                    @Html.PasswordFor(o => o.Password)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.Password)
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+
+    <tr style="height: 20px;"> </tr>
+
+            <tr>
+                <td colspan="3">
+                    <div class="checkbox" style="margin-bottom: 10px;">
+                        @Html.CheckBoxFor(m => m.RememberMe, new { @checked = "checked" })
+                        @Html.LabelFor(m => m.RememberMe)
+                    </div>
+
+                    <input type="submit" value="Zaloguj" class="submitLink" style="height: 40px; margin-left:auto; margin-right:auto;" />
+                </td>
+            </tr>
+        </table>}
+
+    <tr style="height: 20px;"> </tr>
+
+    <div style="text-align: center; margin-left:auto; margin-right:auto; margin-bottom: 15rem; font-size: 1rem; text-decoration: underline; ">
+
+        <a href="@Url.Action("Register")">Nie mam jeszcze konta</a>
+    </div>
+    
+</div>
+

@@ -1,0 +1,11 @@
+﻿@model IEnumerable<EbookApp.Models.Category>
+
+@foreach (var item in Model)
+{
+<div class="box">
+<h3>@item.Opis</h3>
+<p>@item.Promocja</p>
+<img src="images/category-1.png" alt="">
+<a href="@Url.Action("Details", "Category", new {details = item.Opis})" class="btn">shop now</a>
+</div>
+}

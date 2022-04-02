@@ -1,0 +1,16 @@
+﻿@model EbookApp.ViewModels.HomeViewModel
+
+
+@{
+    ViewBag.Title = "KursyLista";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="product" id="product">
+
+    <h1 class="heading">Browse EbookPRIME <span></span></h1>
+    <div class="box-container">
+        @Html.Partial("_PartProductBox", Model.Ebooki)
+    </div>
+</section>
+

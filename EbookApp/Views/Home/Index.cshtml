@@ -1,0 +1,58 @@
+﻿@model EbookApp.ViewModels.HomeViewModel
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>EbookPRIME</h3>
+        <span>Nowa dawka wiedzy</span>
+        <p>Zdecyduj się już dzisiaj. Zapraszamy do sklepu naszego wydawnictwa.</p>
+        <a href="#" class="btn" id="btn_shop">shop now</a>
+    </div>
+
+</section>
+
+<section class="icons-container">
+
+    <div class="icons">
+        <img src="~/Content/Project/images/icon-1.png" alt="">
+        <div class="info">
+            <h3>natychmiastowa dostawa</h3>
+            <span>dla wszystkich zamówień</span>
+        </div>
+    </div>
+
+    <div class="icons">
+        <img src="~/Content/Project/images/icon-2.png" alt="">
+        <div class="info">
+            <h3>gwarancja zwrotu</h3>
+            <span>dla wszystkich zamówień</span>
+        </div>
+    </div>
+
+    <div class="icons">
+        <img src="~/Content/Project/images/icon-3.png" alt="">
+        <div class="info">
+            <h3>Promocje</h3>
+            <span>dla wszystkich zamówień</span>
+        </div>
+    </div>
+</section>
+
+    <section class="product" id="product">
+
+        <h1 class="heading">Just <span>Arrived</span></h1>
+        <div class="box-container">
+            @Html.Partial("_PartProductBox", Model.Ebooki)
+        </div>
+    </section>
+
+    <section class="newsletter">
+
+        <h3>Subskrypcja nowości na stronie!</h3>
+
+        <form action="">
+            <input class="box" type="email" placeholder="podaj swój adres e-mail">
+            <input type="submit" value="Subskrybuj" class="btn">
+        </form>
+
+    </section>

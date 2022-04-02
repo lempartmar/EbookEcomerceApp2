@@ -1,0 +1,37 @@
+﻿@model EbookApp.ViewModels.KoszykViewModel
+@using EbookApp.Infrastructure
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="heading" style="margin-top:25px;"> <span>KOSZYK</span></h1>
+
+<div style="margin-top: 100px;"></div>
+
+<table id="koszykTabela">
+
+    @foreach (var pozycjaKoszyka in Model.PozycjeKoszyka)
+    {
+
+    <tr>
+        <td>
+            <img src="@Url.Content("~/Content/Project/images/Ebooks/" + @pozycjaKoszyka.EbookKoszyk.NazwaPlikuObrazka)" />
+
+        </td>
+        @*<td>@pozycjaKoszyka.EbookKoszyk.Id<div style="margin-bottom: 100px"></div>Title</td>*@
+        <td>@pozycjaKoszyka.EbookKoszyk.Title</td>
+        <td>Cena PLN: @pozycjaKoszyka.EbookKoszyk.CenaEbooka</td>
+        <td>100 zł</td>
+        <td><a href="link">Usuń</a></td>
+    </tr>
+    }
+
+</table>
+
+<div style="margin-top: 100px; height:100px;"></div>
+
+

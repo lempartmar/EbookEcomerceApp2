@@ -1,0 +1,20 @@
+﻿@model EbookApp.Models.Ebook
+
+
+@*// <div> To jest nasz widok cząstkowy </div>
+// <div> Witaj </div>*@
+<div>
+    @using (Html.BeginForm())
+    {
+
+        @Html.LabelFor(a => a.Id)
+        @Html.TextBoxFor(a => a.Id)
+        <br />
+        @Html.LabelFor(a => a.Title)
+        @Html.TextBoxFor(a => a.Title)
+
+        <input type="submit" value="wyślij" />
+
+    }
+
+</div>

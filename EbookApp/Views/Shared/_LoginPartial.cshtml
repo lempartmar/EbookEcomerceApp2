@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNet.Identity
+
+<div id="login-header">
+    @if (Request.IsAuthenticated)
+    {
+        using (Html.BeginForm("Logoff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+        {
+            @Html.AntiForgeryToken()
+
+    <span class="login-font">
+        <span>Zalogowano: </span>
+        @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+    </span>
+        <span> | </span>      
+    <span class="login-font">
+        <a href="javascript:document.getElementById('logoutForm').submit()">Wyloguj</a>
+    </span> }
+                                }
+                                else
+                                {
+<span class="login-font">
+    @Html.ActionLink("Create an account | ", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+</span>
+<span class="login-font">
+    @Html.ActionLink("Sign in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+</span class="login-font">}
+</div>

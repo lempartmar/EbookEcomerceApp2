@@ -1,0 +1,69 @@
+﻿@model PraktyczneKursy.ViewModels.RegisterViewModel
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="login-logo" style="margin-left: auto; margin-right: auto; margin-top: 5rem; margin-bottom: 3rem;">Create An Account</div>
+
+
+
+<div class="login-f" style="margin-left: auto; margin-right: auto; margin-bottom: 10rem;">
+
+    @using (@Html.BeginForm("Register", "Account"))
+    {
+        @Html.AntiForgeryToken()
+
+        <div id="login-error">
+            @Html.ValidationMessage("loginerror", "")
+            @Html.ValidationSummary()
+        </div>
+
+        <table class="login-form-table" style="margin-left: auto; margin-right: auto;">
+            <tr>
+                <td>@Html.LabelFor(o => o.Email, "E-mail:")</td>
+                <td class="td-form">
+                    @Html.TextBoxFor(o => o.Email)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.Email)
+                    </div>
+                </td>
+            </tr>
+            <tr style="height: 20px;"> </tr>
+            <tr>
+                <td>@Html.LabelFor(o => o.Password, "Password:")</td>
+                <td class="td-form">
+                    @Html.PasswordFor(o => o.Password)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.Password)
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr style="height: 20px;"> </tr>
+            <tr>
+                <td style="padding: 0px 20px 0px 0px; text-align: left;">
+                    @Html.LabelFor(o => o.ConfirmPassword, "Repeat password:")
+                </td>
+
+                <td class="td-form">
+                    @Html.PasswordFor(o => o.ConfirmPassword)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.ConfirmPassword)
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+
+            <tr style="height: 20px;"> </tr>
+
+            <td colspan="2" style="text-align: right; padding-right: 20px;">
+                <input type="submit" value="Create" class="submitLink" style="height: 40px; text-align: center; margin-left: auto; margin-right:auto; padding: 0px;" />
+            </td>
+            </tr>
+        </table>}
+    <tr style="height: 20px; margin-bottom: 20rem;"> </tr>
+</div>

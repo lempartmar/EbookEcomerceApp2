@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EbookPRIME - SHOP</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="~/Content/Project/css/style.css">
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header>
+
+        
+
+        <div class="header-1">
+
+            <a href="#" class="logo"><i class="fas fa-shopping-basket"></i>EbookPRIME</a>
+            @Html.Partial("_LoginPartial")
+            @*<form action="" class="search-box-container">
+                <input type="search" id="search-box" placeholder="wyszukaj...">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>*@
+
+        </div>
+
+        <div class="header-2">
+
+            <div id="menu-bar" class="fas fa-bars"></div>
+
+            <nav class="navbar">
+                @Html.ActionLink("Home", "Index", "Home")
+                @*<a href="#category">Kategorie</a>*@
+                @Html.ActionLink("Ebooks", "KursyLista", "Home")
+                @*<a href="#product">Ebooki</a>*@
+                <a href="#deal">Deals</a>
+                @*/* <a href="@Url.Action("Statyczne", "Home", new {nazwa = "Kontakt"})">Kontakt</a> */*@
+                @Html.ActionLink("Contact", "Statyczne", "Home", new { nazwa = "Kontakt" }, null)
+            </nav>
+
+            <div class="icons">
+                <a href="#" class="fas fa-shopping-cart"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-user-circle"></a>
+            </div>
+
+        </div>
+
+    </header>
+
+    <div>
+        @RenderBody()
+    </div>
+
+
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <a href="#" class="logo"><i class="fas fa-shopping-basket"></i>EbookPRIME</a>
+                @*<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam culpa sit enim nesciunt rerum laborum illum quam error ut alias!</p>*@
+                <div class="share">
+                    <a href="#" class="btn fab fa-facebook-f"></a>
+                    <a href="#" class="btn fab fa-twitter"></a>
+                    <a href="#" class="btn fab fa-instagram"></a>
+                    <a href="#" class="btn fab fa-linkedin"></a>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- footer section ends -->
+    <!-- custom js file link  -->
+    <script src="~/Content/Project/js/script.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
